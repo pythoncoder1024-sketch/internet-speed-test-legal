@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy — Internet Speed Test</title>
+  <style>
+    :root{color-scheme:light dark;--bg:#fff;--text:#1f2937;--muted:#6b7280;--card:#f8fafc;--border:#e5e7eb;--link:#2563eb;--heading:#111827}
+    @media(prefers-color-scheme:dark){:root{--bg:#0f172a;--text:#e5e7eb;--muted:#94a3b8;--card:#111827;--border:#334155;--link:#60a5fa;--heading:#f8fafc}}
+    *{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;line-height:1.7;background:var(--bg);color:var(--text)}
+    main{max-width:900px;margin:0 auto;padding:40px 24px 60px}h1,h2{color:var(--heading);line-height:1.3}
+    h1{margin-bottom:8px;font-size:2rem}h2{margin-top:36px;font-size:1.35rem}.updated{color:var(--muted);margin-bottom:28px}
+    p{margin:0 0 16px}ul{padding-left:24px}li{margin-bottom:8px}a{color:var(--link)}strong{color:var(--heading)}
+  </style>
+</head>
+<body>
+<main>
+  <h1>Privacy Policy — Internet Speed Test</h1>
+  <p class="updated">Last updated: September 22, 2026</p>
+
+  <p>
+    This Privacy Policy describes how the standalone Android application
+    <strong>Internet Speed Test</strong> (package name
+    <code>net.toolslibrary.internetspeedtest</code>) handles information.
+    The app is published by ToolsLibrary.
+  </p>
+  <p>Privacy contact: <a href="mailto:support@toolslibrary.net">support@toolslibrary.net</a></p>
+
+  <h2>1. Scope</h2>
+  <p>
+    This policy covers only the standalone <strong>Internet Speed Test</strong> Android app.
+    It does <strong>not</strong> cover the ToolsLibrary multi-tool Android app
+    (<code>net.toolslibrary.app</code>), the ToolsLibrary website at
+    <a href="https://toolslibrary.net/">toolslibrary.net</a>, or other ToolsLibrary products,
+    which have their own notices where applicable.
+  </p>
+
+  <h2>2. What the app does</h2>
+  <p>
+    Internet Speed Test measures an <strong>approximate</strong> connection speed between your
+    device and the ToolsLibrary-owned test server at <code>https://toolslibrary.net</code>
+    by running ping, download, and upload measurements when you start a test.
+  </p>
+  <p>Results are approximate. They are not laboratory measurements or guaranteed ISP line rates.</p>
+
+  <h2>3. Information processed during a speed test</h2>
+  <p>When you run a test, the app makes HTTPS requests to ToolsLibrary endpoints:</p>
+  <ul>
+    <li><code>GET https://toolslibrary.net/__down?bytes=N</code> (latency samples and download measurement)</li>
+    <li><code>POST https://toolslibrary.net/__up</code> (upload measurement using generated binary test data)</li>
+  </ul>
+  <p>
+    The upload body is <strong>generated on the device for measurement purposes</strong>.
+    It is not your personal files, photos, messages, or documents.
+  </p>
+  <p>
+    Like any HTTPS connection to a server, the ToolsLibrary test server can see standard
+    connection metadata necessary to deliver the response, which typically includes your
+    device’s public IP address, approximate timing/size of the transfer, and ordinary
+    HTTP request metadata. ToolsLibrary operates these endpoints to provide the speed test.
+  </p>
+  <p>
+    Based on the current server design described for these probes, the upload body is not
+    retained as a long-term content store for the test payload.
+  </p>
+
+  <h2>4. What stays on your device</h2>
+  <p>
+    In the current version, speed-test results are shown in the app UI for the current session.
+    The app does <strong>not</strong> implement a local test-history database, cloud sync of results,
+    user accounts, or export of result history.
+  </p>
+  <p>
+    Network type classification (for example Wi‑Fi vs cellular) uses Android
+    <code>ConnectivityManager</code> / <code>NetworkCapabilities</code> on the device when available.
+    The app does not request location permission for this.
+  </p>
+
+  <h2>5. Permissions</h2>
+  <p>The app requests:</p>
+  <ul>
+    <li><strong>INTERNET</strong> — required to contact the ToolsLibrary test server</li>
+    <li><strong>ACCESS_NETWORK_STATE</strong> — to detect connectivity / network type on the device</li>
+  </ul>
+  <p>
+    The current app does <strong>not</strong> request location, contacts, phone state, camera,
+    microphone, photos, or files permissions for the speed-test feature.
+  </p>
+
+  <h2>6. Advertising, analytics, and third-party SDKs</h2>
+  <p>
+    Based on the current application source, the app does <strong>not</strong> integrate
+    Google AdMob, Firebase, Google Analytics, crash-reporting SDKs, or third-party branded
+    speed-test services (such as Ookla, Fast.com, M-Lab client libraries, or Cloudflare
+    public speed-test endpoints).
+  </p>
+  <p>
+    Networking uses the open-source OkHttp client library to communicate with
+    <code>https://toolslibrary.net</code>.
+  </p>
+  <p>
+    If you install the app from Google Play, Google Play and Android system services may
+    process installation and update data under Google’s policies. That is separate from
+    ToolsLibrary’s speed-test measurement traffic.
+  </p>
+
+  <h2>7. Accounts and personal information</h2>
+  <p>
+    The current app does not provide a ToolsLibrary user account, sign-in, profile, or
+    payment flow inside the app. It does not ask you to enter your name, email, or other
+    identity details to run a speed test.
+  </p>
+
+  <h2>8. Children</h2>
+  <p>
+    Internet Speed Test is a general-audience utility. We do not knowingly collect personal
+    information from children under 13 through this app beyond what is technically involved
+    in delivering an HTTPS speed test as described above.
+  </p>
+
+  <h2>9. Security</h2>
+  <p>
+    Speed-test traffic uses HTTPS. No method of transmission is completely secure.
+    Use official app stores and keep your device updated.
+  </p>
+
+  <h2>10. Changes</h2>
+  <p>
+    We may update this policy as the product evolves. The “Last updated” date at the top
+    of this page will change when we do.
+  </p>
+
+  <h2>11. Contact</h2>
+  <p>
+    Internet Speed Test (Android)<br />
+    Package: <code>net.toolslibrary.internetspeedtest</code><br />
+    Test server: <a href="https://toolslibrary.net/">https://toolslibrary.net/</a><br />
+    Privacy contact: <a href="mailto:support@toolslibrary.net">support@toolslibrary.net</a>
+  </p>
+</main>
+</body>
+</html>
