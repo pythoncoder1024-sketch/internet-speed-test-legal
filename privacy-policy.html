@@ -16,7 +16,7 @@
 <body>
 <main>
   <h1>Privacy Policy — Internet Speed Test</h1>
-  <p class="updated">Last updated: September 22, 2026</p>
+  <p class="updated">Last updated: October 28, 2026</p>
 
   <p>
     This Privacy Policy describes how the standalone Android application
@@ -66,37 +66,66 @@
 
   <h2>4. What stays on your device</h2>
   <p>
-    In the current version, speed-test results are shown in the app UI for the current session.
-    The app does <strong>not</strong> implement a local test-history database, cloud sync of results,
-    user accounts, or export of result history.
+    Speed-test results can be saved in a local history database on the device.
+    The app can also store an internet-plan note, a test-spot name, and a schedule
+    for later tests on the device. This history is not uploaded to a ToolsLibrary account.
+    There is no sign-in and no cloud sync of that history.
+  </p>
+  <p>
+    You can choose to share a completed result through Android’s share sheet.
+    That send is started by you and goes to the app you pick.
   </p>
   <p>
     Network type classification (for example Wi‑Fi vs cellular) uses Android
-    <code>ConnectivityManager</code> / <code>NetworkCapabilities</code> on the device when available.
-    The app does not request location permission for this.
+    <code>ConnectivityManager</code> / <code>NetworkCapabilities</code> on the device.
+    The app does not request location permission for this. A Wi‑Fi name is stored with
+    a result only when Android itself returns one. On most devices that name is redacted
+    unless the system already allows it.
   </p>
 
   <h2>5. Permissions</h2>
   <p>The app requests:</p>
   <ul>
-    <li><strong>INTERNET</strong> — required to contact the ToolsLibrary test server</li>
+    <li><strong>INTERNET</strong> — required to contact the ToolsLibrary test server and to load an advertisement when one is allowed</li>
     <li><strong>ACCESS_NETWORK_STATE</strong> — to detect connectivity / network type on the device</li>
+    <li><strong>POST_NOTIFICATIONS</strong> — to show a notification for a test you scheduled, after you allow notifications</li>
   </ul>
   <p>
-    The current app does <strong>not</strong> request location, contacts, phone state, camera,
-    microphone, photos, or files permissions for the speed-test feature.
+    The Google Mobile Ads SDK also declares <strong>AD_ID</strong>
+    (<code>com.google.android.gms.permission.AD_ID</code>) so it can read the Android
+    advertising ID when ads are requested. The app does not declare location, contacts,
+    phone-state, camera, microphone, photos, or file permissions for the speed test.
   </p>
 
   <h2>6. Advertising, analytics, and third-party SDKs</h2>
   <p>
-    Based on the current application source, the app does <strong>not</strong> integrate
-    Google AdMob, Firebase, Google Analytics, crash-reporting SDKs, or third-party branded
-    speed-test services (such as Ookla, Fast.com, M-Lab client libraries, or Cloudflare
-    public speed-test endpoints).
+    Release builds can show one Google AdMob banner on the home screen when the screen
+    is idle or showing a completed result. The banner is removed while a speed test,
+    stability test, or LAN scan is running. The app does not show interstitial, native,
+    or rewarded ads.
   </p>
   <p>
-    Networking uses the open-source OkHttp client library to communicate with
-    <code>https://toolslibrary.net</code>.
+    Before requesting an ad, the app uses Google’s User Messaging Platform (UMP) SDK.
+    On launch it refreshes consent information and, where Google’s Privacy &amp; messaging
+    configuration requires it, shows a consent form. If that SDK reports that ads must
+    not be requested, the app does not request one. Where a privacy-options entry is
+    required, Support and About offer <strong>Ad privacy options</strong>. UMP stores the
+    consent choice on the device. The UMP SDK does not use the advertising ID.
+  </p>
+  <p>
+    When an ad is requested, the Google Mobile Ads SDK can collect and share, for
+    advertising, measurement, and fraud prevention: the device IP address (which can be
+    used to estimate a general location), ad and app interactions such as a tap on an ad,
+    diagnostic information about the SDK, and device or account identifiers including the
+    Android advertising ID and app set ID. You can reset or delete the advertising ID in
+    Android settings. Google describes this collection in its Mobile Ads SDK Play data
+    disclosure. Ad requests use HTTPS.
+  </p>
+  <p>
+    The app does not integrate Firebase, Google Analytics, or a crash-reporting SDK.
+    Speed measurements are not sent to Ookla, Fast.com, or M-Lab client libraries.
+    Networking for the speed test uses the open-source OkHttp client library to
+    communicate with <code>https://toolslibrary.net</code>.
   </p>
   <p>
     If you install the app from Google Play, Google Play and Android system services may
@@ -113,9 +142,9 @@
 
   <h2>8. Children</h2>
   <p>
-    Internet Speed Test is a general-audience utility. We do not knowingly collect personal
-    information from children under 13 through this app beyond what is technically involved
-    in delivering an HTTPS speed test as described above.
+    Internet Speed Test is a general-audience utility and is not directed at children.
+    A device that uses the app may still request an advertisement as described in section 6.
+    The app does not ask children to create an account or to enter their name or email.
   </p>
 
   <h2>9. Security</h2>
